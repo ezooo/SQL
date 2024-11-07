@@ -1,0 +1,11 @@
+use bookmarketdb;
+show tables;
+desc book;
+select * from book;
+update book set b_condition='New' where b_condition='new';
+select * from board;
+desc board;
+insert into board(id, name, subject, content, regist_day, hit, ip) values('1','1','1','1','1',1,'1');
+delete from board where id='1';
+select * from member;
+select * from board where num=2;
