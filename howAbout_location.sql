@@ -19,3 +19,18 @@ create table location
 );
 
 select * from location;
+
+select distinct category_name1 from location;
+
+select a.category_name1, b.fileurl1 
+	from location a left outer join location b
+    on a.category_name1 = b.category_name1
+    group by a.category_name1;
+    
+SELECT a.category_name1, 
+	(SELECT b.fileurl1 
+	FROM location b 
+	WHERE b.category_name1 = a.category_name1 
+	LIMIT 1) AS fileurl1
+FROM location a
+GROUP BY a.category_name1;
