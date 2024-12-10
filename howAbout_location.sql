@@ -18,6 +18,8 @@ create table location
 	 fileurl5 text
 );
 
+alter table location add column num int primary key auto_increment;
+
 select * from location;
 
 select distinct category_name1 from location;
@@ -33,4 +35,5 @@ SELECT a.category_name1,
 	WHERE b.category_name1 = a.category_name1 
 	LIMIT 1) AS fileurl1
 FROM location a
-GROUP BY a.category_name1;
+GROUP BY a.category_name1
+order by a.category_name1 asc;

@@ -16,3 +16,6 @@ insert into diary(diaryId,userId, visit_date,visit_diary) values(1111, "d", "d",
 
 alter table diary modify diaryId BigInt;
 desc diary;
+
+alter table diary add column num int auto_increment primary key;
+alter table diary drop column num;
