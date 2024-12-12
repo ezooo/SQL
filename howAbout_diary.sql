@@ -19,3 +19,5 @@ desc diary;
 
 alter table diary add column num int auto_increment primary key;
 alter table diary drop column num;
+
+delete from diary where userId is null;
