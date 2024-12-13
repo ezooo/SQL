@@ -30,24 +30,38 @@ create table recommendation
 	recommendDate varchar(20)
 );
 
+-- create table diary
+-- (
+-- 	diaryId bigint primary key,
+-- 	userId varchar(20),
+--     visit_date varchar(20),
+--     visit_diary varchar(500),
+--     filename varchar(50),
+--     foreign key(userId) references aboutMember(userId)
+-- );
+
 create table diary
 (
 	diaryId bigint primary key,
 	userId varchar(20),
     visit_date varchar(20),
-    visit_diary varchar(500),
-    filename varchar(50),
+    visit_location text,
+    visit_diary text,
+    filename0 varchar(50),
+    filename1 varchar(50),
+    filename2 varchar(50),
+    filename3 varchar(50),
     foreign key(userId) references aboutMember(userId)
 );
-
-create table diaryimage
-(
-	num int primary key auto_increment,
-    userId varchar(20),
-	diaryId bigint,	-- 이거 다이어리랑 연결할 외래키
-    foreign key(diaryId) references diary(diaryId),
-    foreign key(userId) references aboutMember(userId)
-);
+desc diary;
+-- create table diaryimage
+-- (
+-- 	num int primary key auto_increment,
+--     userId varchar(20),
+-- 	diaryId bigint,	-- 이거 다이어리랑 연결할 외래키
+--     foreign key(diaryId) references diary(diaryId),
+--     foreign key(userId) references aboutMember(userId)
+-- );
 
 create table aboutMember(
    userName varchar(10) ,
