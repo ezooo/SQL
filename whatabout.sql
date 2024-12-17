@@ -4,8 +4,8 @@ create table location
 (
 	 data_title varchar(20),
 	 user_address varchar(50),
-	 lattitude varchar(50),
-	 logitude varchar(50),
+	 latitude varchar(50),
+	 longitude varchar(50),
 	 insttnm varchar(20),
 	 category_name1 varchar(20),
 	 category_name2 varchar(20),
@@ -15,11 +15,11 @@ create table location
 	 fileurl2 text,
 	 fileurl3 text,
 	 fileurl4 text,
-	 fileurl5 text,
      num int primary key auto_increment
 );
 select * from location;
-
+drop table location;
+delete from location;
 
 create table recommendation
 (
@@ -46,11 +46,13 @@ create table diary
 	userId varchar(20),
     visit_date varchar(20),
     visit_location text,
+    address text,
     visit_diary text,
     filename0 varchar(50),
     filename1 varchar(50),
     filename2 varchar(50),
     filename3 varchar(50),
+    isopen varchar(5),
     foreign key(userId) references aboutMember(userId)
 );
 desc diary;
@@ -62,7 +64,8 @@ desc diary;
 --     foreign key(diaryId) references diary(diaryId),
 --     foreign key(userId) references aboutMember(userId)
 -- );
-
+alter table diary add column isopen varchar(5);
+select * from diary where isopen='true';
 create table aboutMember(
    userName varchar(10) ,
     userId varchar(20) primary key,
@@ -73,11 +76,12 @@ create table aboutMember(
     userEamil varchar(100) unique,
     enabled boolean
 );
+select * from aboutmember;
 drop table diaryimage;
 drop table diary;
 select * from diaryimage;
-select * from diary;
-delete from diaryimage;
+select * from diary where userId='aaa';
+delete from diary;
 insert into diaryImage values(null, 123456, 'aa');
 select * from diaryimage where diaryId=1733907217102;
 
