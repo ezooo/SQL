@@ -20,7 +20,9 @@ create table location
 select * from location;
 drop table location;
 delete from location;
-
+select data_title, user_address from location where data_title like '%마산%';
+select distinct substr(insttnm,1,2) from location;
+select * from location where substr(insttnm,1,2)='남해';
 create table recommendation
 (
 	recommendId bigint primary key,
@@ -80,7 +82,7 @@ select * from aboutmember;
 drop table diaryimage;
 drop table diary;
 select * from diaryimage;
-select * from diary where userId='aaa';
+select * from diary;
 delete from diary;
 insert into diaryImage values(null, 123456, 'aa');
 select * from diaryimage where diaryId=1733907217102;
