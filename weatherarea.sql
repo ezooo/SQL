@@ -4,7 +4,6 @@ create table weatherarea
 	areaname char(2),
     areacode varchar(10)
 );
-
 insert into weatherarea values('거제','11H20403');
 insert into weatherarea values('거창','11H20502');
 insert into weatherarea values('고성','11H20404');
@@ -28,6 +27,7 @@ select * from weatherarea;
 
 create table WeatherOfWeek
 (
+	basedate varchar(10) primary key,
 	wf4Am varchar(20),
     wf5Am varchar(20),
     wf6Am varchar(20),
@@ -37,3 +37,5 @@ create table WeatherOfWeek
     wf10 varchar(20)
 );
 select * from WeatherOfWeek;
+delete from WeatherOfWeek;
+drop table WeatherOfWeek;
